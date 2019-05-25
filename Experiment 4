@@ -1,0 +1,166 @@
+// Experiment 4 - Question no. 1
+
+#include <iostream>
+#include <conio.h>
+#include <iomanip>
+#include <cstring>
+
+using namespace std;
+
+void instructions()
+{
+	cout << "Welcome to our Calculator Program! Choose your Mathematical Operation: " << endl;
+	cout << "Enter 1 for Addition" << endl;
+	cout << "Enter 2 for Subtraction" << endl;
+	cout << "Enter 3 for Multiplication" << endl;
+	cout << "Enter 4 for Division" << endl;
+	cout << "Enter 5 for Modulus" << endl;
+}
+
+int main()
+{
+	int h, i, j, oper, xm, ym, mod;
+	double x1, y1, x2, y2, x3, y3, x4, y4, sum, difference, product, quotient;
+	string decision;
+
+
+	for (;;)
+	{
+		instructions();
+		cin >> oper;
+
+		if (oper == 1)
+		{
+			cout << "Assign the x variable: ";
+			cin >> x1;
+
+			cout << "Assign the y variable: ";
+			cin >> y1;
+
+			sum = x1 + y1;
+			cout << fixed;
+			cout << setprecision(2);
+			cout << "The sum is " << sum << endl;
+		}
+
+		else if (oper == 2)
+		{
+			cout << "Assign the x variable: ";
+			cin >> x2;
+
+			cout << "Assign the y variable: ";
+			cin >> y2;
+
+			difference = x2 - y2;
+			cout << fixed;
+			cout << setprecision(2);
+			cout << "The difference is " << difference << endl;
+		}
+
+		else if (oper == 3)
+		{
+			cout << "Assign the x variable: ";
+			cin >> x3;
+
+			cout << "Assign the y variable: ";
+			cin >> y3;
+
+			product = x3 * y3;
+			cout << fixed;
+			cout << setprecision(2);
+			cout << "The product is " << product << endl;
+		}
+
+		else if (oper == 4)
+		{
+			cout << "Assign the x variable: ";
+			cin >> x4;
+
+			cout << "Assign the y variable: ";
+			cin >> y4;
+
+			quotient = x4 / y4;
+			cout << fixed;
+			cout << setprecision(2);
+			cout << "The quotient is " << quotient << endl;
+		}
+
+		else if (oper == 5)
+		{
+			cout << "Assign the x variable: ";
+			cin >> xm;
+
+			cout << "Assign the y variable: ";
+			cin >> ym;
+
+			mod = xm % ym;
+			cout << "The remainder is " << mod << endl;
+		}
+			
+		cout << "Do you still want to continue computing? "; //Inquiry for further usage of this program
+		cin >> decision;
+		
+		cout << endl;
+		
+		if (decision[0] == 'y' || decision[0] == 'Y')
+			continue;
+		else
+			cout << "Thank you for using this Calculator Program! " << endl;
+			break; 
+	}
+	
+	_getch();
+	return 0;
+}
+
+//Experiment 4 - Question no. 2
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void pscreen()
+{
+	cout << "Sorted thru Selection sort" << endl;
+}
+
+int main()
+{
+
+	int size, arr[20], i, j, temp;
+	cout << "Enter Array size: ";
+	cin >> size;
+	cout << endl;
+
+	cout << "Enter Array Elements: ";
+	for (i = 0; i < size; i++)
+	{
+		cin >> arr[i];
+	}
+
+	cout << endl;
+	pscreen();
+
+	for (i = 0; i < size; i++)
+	{
+		for (j = i + 1; j < size; j++)
+			if (arr[i] > arr[j])
+			{
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+
+			}
+	}
+	cout << "Now the Array after sorting: " << endl;
+	for (i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+
+	}
+
+	_getch();
+	return 0;
+
+}
